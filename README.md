@@ -5,8 +5,13 @@
 2. Wait for Maven to import.
 3. Run `AppDocsApplication` (green play button).
 
-API base: `http://localhost:8080`  
-Swagger UI: `http://localhost:8080/swagger-ui.html`
+API base: `## Deployment
+This project is deployed on AWS ECS (Fargate/EC2) and accessible publicly at:
+
+➡️ http://3.84.45.80:8080/swagger-ui/index.html
+
+The container is built from the Dockerfile in this repo and hosted via ECS Service (Fargate) behind a public IP.
+`  
 
 ## cURL Examples
 See `AppDocs.postman_collection.json` or use the examples in the README.
