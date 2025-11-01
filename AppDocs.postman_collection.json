@@ -1,0 +1,131 @@
+{
+  "info": {
+    "name": "AppDocs API (Java8)",
+    "_postman_id": "c3b3e1c8-0000-0000-0000-appdocs",
+    "description": "Test collection for Applications & Documents API (Spring Boot 2.7.x)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Application",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/applications",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "applications"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"applicantName\": \"Alice Smith\",\n  \"email\": \"alice@example.com\",\n  \"position\": \"Backend Engineer\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get Application by ID",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/applications/1"
+      }
+    },
+    {
+      "name": "Search Applications",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/applications?status=SUBMITTED&q=engineer&page=0&size=5&sort=submittedAt,desc"
+      }
+    },
+    {
+      "name": "Update Application",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:8080/api/applications/1",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"applicantName\": \"Alice S\",\n  \"email\": \"alice.s@example.com\",\n  \"position\": \"Senior Backend Engineer\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Patch Status",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:8080/api/applications/1/status",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"IN_REVIEW\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Add Document",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:8080/api/applications/1/documents",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fileName\": \"Alice-Resume.pdf\",\n  \"fileType\": \"PDF\",\n  \"url\": \"https://files.example.com/alice-resume.pdf\"\n}"
+        }
+      }
+    },
+    {
+      "name": "List Documents for Application",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/applications/1/documents"
+      }
+    },
+    {
+      "name": "Get Document by ID",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/documents/1"
+      }
+    },
+    {
+      "name": "Delete Document",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:8080/api/documents/1"
+      }
+    },
+    {
+      "name": "Delete Application",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:8080/api/applications/1"
+      }
+    }
+  ]
+}

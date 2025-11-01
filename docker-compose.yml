@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    image: app-docs-java8:latest
+    ports:
+      - "8080:8080"
