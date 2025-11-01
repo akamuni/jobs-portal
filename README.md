@@ -8,7 +8,7 @@
 API base: `## Deployment
 This project is deployed on AWS ECS (Fargate/EC2) and accessible publicly at:
 
-➡️ http://3.84.45.80:8080/swagger-ui/index.html
+http://jobsportal-lb-301757636.us-east-1.elb.amazonaws.com/swagger-ui/index.html
 
 The container is built from the Dockerfile in this repo and hosted via ECS Service (Fargate) behind a public IP.
 `  
